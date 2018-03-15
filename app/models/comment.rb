@@ -8,6 +8,6 @@ class Comment < ActiveRecord::Base
   end
 
   def comment_string
-
+    "#{self.user.username} says: #{self.content}"
   end
 end
