@@ -1,11 +1,9 @@
-<%= form_for @post.comments.build do |f| %>
+<%= form_for Comment.new do |f| %>
+  <input type="hidden" name="comment[post_id]" value="<%= @post.id %>">
+
   <p>
     <%= f.collection_select :user_id, User.all, :id, :username %>
   </p>
-
-  <%= fields_for User.new do |u| %>
-    <%= u.text_field :username %>
-  <% end %>
 
   <p>
     <div class="fl"> <%= f.label :content %> </div>

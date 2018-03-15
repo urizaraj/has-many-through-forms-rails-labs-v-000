@@ -1,0 +1,14 @@
+<%= form_for @post do |f| %>
+  <%= fields_for @post.comments.build do |c| %>
+    <p>
+      <%= c.collection_select :user_id, User.all, :id, :username %>
+    </p>
+
+    <p>
+      <div class="fl"> <%= c.label :content %> </div>
+      <%= c.text_area :content %>
+    </p>
+
+    <p><%= c.submit %></p>
+  <% end %>
+<% end %>
