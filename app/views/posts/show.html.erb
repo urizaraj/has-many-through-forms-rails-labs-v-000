@@ -15,8 +15,7 @@
 <h3>Comments:</h3>
 <% @post.comments.each do |comment| %>
   <p>
-    <%= comment.content %><br>
-    by <%= comment.user.username %>
+    comment.comment_string
   </p>
 
 <% end %>
