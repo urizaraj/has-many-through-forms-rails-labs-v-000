@@ -1,12 +1,9 @@
 class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :post
-  accepts_nested_attributes_for :user
+  accepts_nested_attributes_for :user, reject_if: :all_blank
 
-  def user_attributes(atr)
-    atr.values.each do |value|
-      user = user.find_or_create_by(value)
-      self.user = user
-    end
+  def user_attributes(attributes)
+    self.user = User.find_or_create_by(attributes)
   end
 end
