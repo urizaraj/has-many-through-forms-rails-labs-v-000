@@ -1,0 +1,5 @@
+<h1><%= @category.name %></h1>
+
+<% @posts.each do |post| %>
+  <h4><%= link_to post.title, post %></h4>
+<% end %>
