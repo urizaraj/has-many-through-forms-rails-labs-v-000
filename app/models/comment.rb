@@ -6,4 +6,8 @@ class Comment < ActiveRecord::Base
   def user_attributes(attributes)
     self.user = User.find_or_create_by(attributes)
   end
+
+  def comment_string
+
+  end
 end
